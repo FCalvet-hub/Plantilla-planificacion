@@ -7,7 +7,7 @@ codirector, % Uncomment to add a codirector to the title page
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{Control motor brushless} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 \posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -17,18 +17,18 @@ codirector, % Uncomment to add a codirector to the title page
 %\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Nombre del Autor} 
+\autor{Fernando Nicolas Calvet} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Nombre del Director}
+\director{XXXXXXXX YYYYYYYYY}
 \pertenenciaDirector{pertenencia} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
-\codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
+\codirector{Patricio BOS} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Nombre del cliente}
-\empresaCliente{Empresa del cliente}
+\cliente{-}
+\empresaCliente{GA.MA Italy}
 
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
 \juradoUno{Nombre y Apellido (1)}
@@ -38,9 +38,9 @@ codirector, % Uncomment to add a codirector to the title page
 \juradoTres{Nombre y Apellido (3)}
 \pertenenciaJurTres{pertenencia (3)}
  
-\fechaINICIO{30 de abril de 2021}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{18 de junio de 2021} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{15 de mayo de 2022}	%Fecha de defensa pública del trabajo final
+\fechaINICIO{22 de Agosto de 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{10 de Octubre de 2023} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{XX de XXXX de XXXX}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -52,7 +52,7 @@ codirector, % Uncomment to add a codirector to the title page
 
 \thispagestyle{empty}
 {\setlength{\parskip}{0pt}
-\tableofcontents{}
+	\tableofcontents{}
 }
 \pagebreak
 
@@ -62,37 +62,36 @@ codirector, % Uncomment to add a codirector to the title page
 
 
 \begin{table}[ht]
-\label{tab:registro}
-\centering
-\begin{tabularx}{\linewidth}{@{}|c|X|c|@{}}
-\hline
-\rowcolor[HTML]{C0C0C0} 
-Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
-0      & Creación del documento                                 &\fechaInicioName \\ \hline
-%1      & Se completa hasta el punto 4 inclusive                 & dd/mm/aaaa \\ \hline
-%2      & Se completa hasta el punto 7 inclusive
-%		  Se puede agregar algo más \newline
-%		  En distintas líneas \newline
-%		  Así                                                    & dd/mm/aaaa \\ \hline
-%3      & Se completa hasta el punto 11 inclusive                & dd/mm/aaaa \\ \hline
-%4      & Se completa el plan	                                 & dd/mm/aaaa \\ \hline
-\end{tabularx}
+	\label{tab:registro}
+	\centering
+	\begin{tabularx}{\linewidth}{@{}|c|X|c|@{}}
+		\hline
+		\rowcolor[HTML]{C0C0C0}
+		Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha                    \\ \hline
+		0        & Creación del documento                                                          & \fechaInicioName         \\ \hline
+		1        & Se completa hasta el punto 4 inclusive                                          & 05 de Septiembre de 2023 \\ \hline
+		%2      & Se completa hasta el punto 7 inclusive
+		%		  Se puede agregar algo más \newline
+		%		  En distintas líneas \newline
+		%		  Así                                                    & dd/mm/aaaa \\ \hline
+		%3      & Se completa hasta el punto 11 inclusive                & dd/mm/aaaa \\ \hline
+		%4      & Se completa el plan	                                 & dd/mm/aaaa \\ \hline
+	\end{tabularx}
 \end{table}
 
 \pagebreak
-
 
 
 \section*{Acta de constitución del proyecto}
 \label{sec:acta}
 
 \begin{flushright}
-Buenos Aires, \fechaInicioName
+	Buenos Aires, \fechaInicioName
 \end{flushright}
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de un calefón}, y tendrá un presupuesto preliminar estimado de \textcolor{red}{600} h de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en desarrollo de un sistema de control para motores trifásicos sin escobillas y sin sensor hall que pueda hacer girar el motor girar as una velocidad de 100.000 rpm, y tendrá un presupuesto preliminar estimado de 600 h de trabajo y USD4000, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -100,13 +99,13 @@ Se adjunta a esta acta la planificación inicial.
 
 % Esta parte se construye sola con la información que hayan cargado en el preámbulo del documento y no debe modificarla
 \begin{table}[ht]
-\centering
-\begin{tabular}{ccc}
-\begin{tabular}[c]{@{}c@{}}Dr. Ing. Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\clientename \\ \empclientename \end{tabular} \vspace{2.5cm} \\ 
-\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \supname \\ Director del Trabajo Final\end{tabular}} \vspace{2.5cm} \\
-%\begin{tabular}[c]{@{}c@{}}\jurunoname \\ Jurado del Trabajo Final\end{tabular}     &  & \begin{tabular}[c]{@{}c@{}}\jurdosname\\ Jurado del Trabajo Final\end{tabular}  \vspace{2.5cm}  \\
-%\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \jurtresname\\ Jurado del Trabajo Final\end{tabular}} \vspace{.5cm}                                                                     
-\end{tabular}
+	\centering
+	\begin{tabular}{ccc}
+		\begin{tabular}[c]{@{}c@{}}Dr. Ing. Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\clientename \\ \empclientename \end{tabular} \vspace{2.5cm} \\
+		\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \supname \\ Director del Trabajo Final\end{tabular}} \vspace{2.5cm}                                                                                   \\
+		%\begin{tabular}[c]{@{}c@{}}\jurunoname \\ Jurado del Trabajo Final\end{tabular}     &  & \begin{tabular}[c]{@{}c@{}}\jurdosname\\ Jurado del Trabajo Final\end{tabular}  \vspace{2.5cm}  \\
+		%\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \jurtresname\\ Jurado del Trabajo Final\end{tabular}} \vspace{.5cm}                                                                     
+	\end{tabular}
 \end{table}
 
 
@@ -115,166 +114,150 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
+El propósito de este proyecto es diseñar un sistema de control para motores trifásicos sin escobillas y sin sensor hall aplicando los algoritmos de control necesarios para su correcto funcionamiento y demostrar su performance montandolo dentro de un secador de pelo orientado al mercado profesional. Ademas se prevé que incorpore el control de potencia de la resistencia calefactora con su correspondiente realimentación y una interfaz de usuario sencilla.
 
-\begin{consigna}{red} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección. En cada entrega parcial deben eliminar los comandos begin y end del bloque consigna de las secciones que hayan completado.
-
-El objetivo es que el lector en una o dos páginas entienda de qué trata el proyecto y cuáles son sus desafíos, cuál es la motivación para realizarlo y su importancia.
-
-Se debe introducir el contexto del proyecto, el estado del arte en la temática, describir la propuesta de valor, cúal es el problema que atiende y cuál es la solución que se propone. Se debe dar una descripción funcional de la solución que incluya un diagrama en bloques.
-
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
-
+En la actualidad los secadores de pelo se fabrican con básicamente tres tipos de motores:
 \begin{itemize}
-	\item ¿Cuál es el contexto del proyecto, es un emprendimiento personal, un proyecto para una empresa, es parte del programa de vinculación con empresas del posgrado?
-	\item ¿Existen o aplican condiciones especiales al proyecto, financiamiento de algún programa público o privado, acuerdos de confidencialidad, acuerdos sobre la propiedad intelectual de los entregables u otros?
-	\item ¿Cómo se compara la solución propuesta con el estado del arte en el campo de aplicación? ¿En qué aspectos destaca?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está la solución que se propone?
-	\item ¿Cuáles son las características del cliente (el adoptante de los entregables del proyecto) qué valora, qué necesita?
-	\item ¿Por dónde pasa la innovación?
+	\item Motor DC
+	\item Motor Universal
+	\item Motor sin escobillas
+\end{itemize}
+El más implementado de todos es el motor universal al ser, por el momento, el más equilibrado en relación precio/prestaciones. Esto se debe mayormente a su facilidad constructiva y a que no es necesario control externo para su funcionamiento.
+Sin embargo, la evolución en los procesos de manufactura, caída de precio en imanes permanentes y procesamiento hace cada dia mas viable la utilización de motores BLDC (brushless DC, motor CC sin escobillas).
+
+En la industria de los secadores de pelo se está produciendo una revolución silenciosa. Los modelos más avanzados, diseñados para uso profesional, cuentan con motores BLDC, que giran a una velocidad de hasta 100.000 rpm, seis veces más rápido que los motores convencionales. Este aumento de velocidad permite secar el cabello más rápido y con mayor precisión, sin dañarlo. A su vez dimensionalmente este cambio se traduce en pasar de 70 mm de diámetro al orden de los 30 mm (la mitad de tamaño).
+
+Ga.Ma Italy es líder mundial en el diseño, desarrollo y fabricación de productos para el cuidado del cabello. Es por esto que la empresa ya comercializa secadores de pelo con esta tecnología para no perder mercado, pero su desarrollo fue adquirido a un tercero. Esto trajo aparejado una serie de problemas, desde la perdida de agilidad en el lanzamiento de nuevos productos hasta fallas que fueron imposibles de solucionar luego de finalizado el proceso de producción. En este sentido el prototipo desarrollado en este proyecto que se espera que esté listo en 2024, será el punto de partida para futuros proyectos de la empresa.
+
+Este proyecto busca satisfacer a 2 clientes, el externo y el interno.
+El cliente interno es el directorio que busca un mayor control sobre sus productos y una menor dependencia de los actuales fabricantes.
+El cliente externo finalmente será el profesional que utiliza el secador en salones de belleza, salones de peluquería y estética, spa, entre otros. Por lo que dicho proyecto deberá contemplar exigencias acordes a este mercado.
+
+En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa queb el mismo consta de:
+\begin{itemize}
+	\item Un Filtro EMI para suprimir la interferencia electromagnética.
+	\item Un Rectificador para tener 310V para el control del Array MOSFET del motor BLDC.
+	\item Un Step-Down para la alimentación de la electrónica de baja potencia.
+	\item Un circuito de detección de cruce por 0 de la tensión de entrada, principalmente para un manejo más eficiente del controlador de elemento calefactor.
+	      Resistencias de Shunt junto con un circuito de Acondicionamiento de señal en cada una de las tres ramas del motor BLDC para el control por BEMF (fuerza contraelectromotriz (EMF) de realimentación) que permite saber en cada momento la posición del rotor respecto al estator.
 \end{itemize}
 
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y descripción funcional de la solución propuesta.
-
-Las figuras se deben mencionar en el texto ANTES de que aparezcan con una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''.  La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
 
 \begin{figure}[htpb]
-\centering 
-\includegraphics[width=.5\textwidth]{./Figuras/diagBloques.png}
-\caption{Diagrama en bloques del sistema}
-\label{fig:diagBloques}
+	\centering
+	\includegraphics[width=1\textwidth]{./Figuras/Diagrama_general_v1.drawio.png}
+	\caption{Diagrama en bloques del sistema}
+	\label{fig:diagBloques}
 \end{figure}
 
 \vspace{25px}
 
-El tamaño de la tipografía en TODAS las figuras debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama, preferentemente en la gama de colores pastel.
-\end{consigna}
-
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
 
-\begin{consigna}{red} % este comando se debe borrar para la entrega, junto con la contraparte \end{consigna}{red} 
- 
-\textbf{Nota importante:} borrar esto y todas las consignas en color rojo antes de entregar este documento). Esto se hace eliminando el par de comandos que forman el bloque consigna, \verb!\begin{consigna}{red}! y \verb!\end{consigna}{red}! del código. 
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos. Si se considera que una persona cumple dos o más roles, entonces solo dejarla en el rol más importante. 
-
-Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente. Si una persona es el Responsable, no debe ser colocado también como miembro del equipo.
-
 
 \begin{table}[ht]
-%\caption{Identificación de los interesados}
-%\label{tab:interesados}
-\begin{tabularx}{\linewidth}{@{}|l|X|X|l|@{}}
-\hline
-\rowcolor[HTML]{C0C0C0} 
-Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
-Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
-Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
-\end{tabularx}
+	%\caption{Identificación de los interesados}
+	%\label{tab:interesados}
+	\begin{tabularx}{\linewidth}{@{}|l|X|X|l|@{}}
+		\hline
+		\rowcolor[HTML]{C0C0C0}
+		Rol         & Nombre y Apellido     & Organización    & Puesto                   \\ \hline
+		Auspiciante & -                     & \empclientename &                          \\ \hline
+		% Cliente       & \clientename      &\empclientename	&        	\\ \hline
+		Impulsor    & Ing. Jose Tantera     & \empclientename & Ing. Desarrollo (italia) \\ \hline
+		Responsable & \authorname           & FIUBA           & Alumno                   \\ \hline
+		% Colaboradores &                       &                 &                          \\ \hline
+		Orientador  & \supname              & \empclientename & Director Trabajo final   \\ \hline
+		Equipo      & Ing. Nicolas Berreiro & \empclientename & Diseño mecanico          \\ \hline
+		% Usuario final & -                       &   -              &    -                      \\ \hline
+	\end{tabularx}
 \end{table}
 
-El Director suele ser uno de los Orientadores.
-
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Es deseable listar a continuación las principales características de cada interesado.
- 
-Por ejemplo:
 \begin{itemize}
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
-	\item Orientador: María Gómez va a poder ayudar mucho con la definición de los requerimientos.
+	\item Auspiciante: es riguroso y exigente con los costos, siempre se pide reducirlos.
+	\item Impulsor: Se unió al equipo de Italia recientemente, es posible que la comunicación se vea comprometida.
+	\item Orientador: Nicolas puede aportar mucho desde el punto de vista mecánico del proyecto.
 \end{itemize}
 
-\end{consigna} % este comando se debe borrar para la entrega, junto con la contraparte \begin{consigna}{red}
+
 
 
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red}
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
-
-Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de este proyecto es...''.
-\end{consigna}
+El propósito de este proyecto es desarrollar un sistema de control interno para motores BLDC trifásicos, que permita a la empresa mejorar la calidad y la competitividad de sus secadores de pelo. El desarrollo de este sistema permitirá a Ga.Ma Italy solucionar los problemas que enfrentó con los secadores de pelo que incorporaron un sistema de control externo, tales como la incompatibilidad con distintos proveedores, la quema de secadores por mal desempeño del motor, la falta de funcionalidad y la ausencia de control por temperatura.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
+El resultado final de este proyecto es fabricar el prototipo de un inverter que contenga todo lo necesario
+para la excitación y protección del motor BLDC. Incluyendo:
 
-Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
+\begin{itemize}
+	\item un PCB que incluye la etapa de potencia y al microcontrolador. Se debe realizar el diseño, fabricación y montaje.
+	\item un firmware con los algoritmos de control necesarios para el motor (FOC) que incluya también una simple interfaz de usuario.
+	\item una demostración con sus pertinentes mediciones de performance, comparando los resultados con la competencia.
+\end{itemize}
 
-Explicitar todo lo quede comprendido dentro del alcance del proyecto.
+Lo que no se incluye en este proyecto es el siguiente trabajo:
 
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
-
-\end{consigna}
+\begin{itemize}
+	\item El desarrollo de un motor BLDC trifásicos sin sensor hall.
+	\item La producción en masa del sistema de control.
+	\item La integración del sistema de control en un secador de pelo.
+	\item El desarrollo de nuevas funcionalidades para el secador de pelo, como diferentes niveles de velocidad o ajustes de temperatura. Estas funcionalidades son posibles con el sistema de control propuesto, pero no están incluidas en el alcance del proyecto.
+\end{itemize}
 
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
+Para el desarrollo del presente proyecto se supone que:
 
 \begin{itemize}
-	\item Supuesto 1
-	\item Supuesto 2...
+	\item El financiamiento del proyecto esta asegurado, y que se conseguirán todos los componentes y materiales necesarios.
+	\item El equipo de diseño industrial de la empresa proveerá las dimensiones necesarias para el diseño del PCB.
+	\item Se contara con un estimado de 20 horas semanales para el desarrollo del producto.
 \end{itemize}
-
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-\end{consigna}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
 
 \begin{consigna}{red}
-Los requerimientos deben numerarse y de ser posible estar agruparlos por afinidad, por ejemplo:
+	Los requerimientos deben numerarse y de ser posible estar agruparlos por afinidad, por ejemplo:
 
-\begin{enumerate}
-	\item Requerimientos funcionales
-		\begin{enumerate}
-			\item El sistema debe...
-			\item Tal componente debe...
-			\item El usuario debe poder...
-		\end{enumerate}
-	\item Requerimientos de documentación
-		\begin{enumerate}
-			\item Requerimiento 1
-			\item Requerimiento 2 (prioridad menor)
-		\end{enumerate}
-	\item Requerimiento de testing...
-	\item Requerimientos de la interfaz...
-	\item Requerimientos interoperabilidad...
-	\item etc...
-\end{enumerate}
+	\begin{enumerate}
+		\item Requerimientos funcionales
+		      \begin{enumerate}
+			      \item El sistema debe...
+			      \item Tal componente debe...
+			      \item El usuario debe poder...
+		      \end{enumerate}
+		\item Requerimientos de documentación
+		      \begin{enumerate}
+			      \item Requerimiento 1
+			      \item Requerimiento 2 (prioridad menor)
+		      \end{enumerate}
+		\item Requerimiento de testing...
+		\item Requerimientos de la interfaz...
+		\item Requerimientos interoperabilidad...
+		\item etc...
+	\end{enumerate}
 
-Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
+	Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
 
-Indicar claramente cuál es la prioridad entre los distintos requerimientos y si hay requerimientos opcionales. 
+	Indicar claramente cuál es la prioridad entre los distintos requerimientos y si hay requerimientos opcionales.
 
-No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!
+	No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!
 
-Y al escribirlos seguir las siguientes reglas:
-\begin{itemize}
-	\item Ser breve y conciso (nadie lee cosas largas). 
-	\item Ser específico: no dejar lugar a confusiones.
-	\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-\end{itemize}
+	Y al escribirlos seguir las siguientes reglas:
+	\begin{itemize}
+		\item Ser breve y conciso (nadie lee cosas largas).
+		\item Ser específico: no dejar lugar a confusiones.
+		\item Expresar los requerimientos en términos que sean cuantificables y medibles.
+	\end{itemize}
 
 \end{consigna}
 
@@ -282,11 +265,11 @@ Y al escribirlos seguir las siguientes reglas:
 \label{sec:backlog}
 
 \begin{consigna}{red}
-Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
+	Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
 
-El formato propuesto es: "como [rol] quiero [tal cosa] para [tal otra cosa]."
+	El formato propuesto es: "como [rol] quiero [tal cosa] para [tal otra cosa]."
 
-Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia
+	Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia
 \end{consigna}
 
 \section{8. Entregables principales del proyecto}
@@ -294,16 +277,16 @@ Se debe indicar explícitamente el criterio para calcular los \textit{story poin
 
 \begin{consigna}{red}
 
-Los entregables del proyecto son (ejemplo):
+	Los entregables del proyecto son (ejemplo):
 
-\begin{itemize}
-	\item Manual de uso
-	\item Diagrama de circuitos esquemáticos
-	\item Código fuente del firmware
-	\item Diagrama de instalación
-	\item Informe final
-	\item etc...
-\end{itemize}
+	\begin{itemize}
+		\item Manual de uso
+		\item Diagrama de circuitos esquemáticos
+		\item Código fuente del firmware
+		\item Diagrama de instalación
+		\item Informe final
+		\item etc...
+	\end{itemize}
 
 \end{consigna}
 
@@ -311,34 +294,34 @@ Los entregables del proyecto son (ejemplo):
 \label{sec:wbs}
 
 \begin{consigna}{red}
-El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
+	El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
 
-\begin{enumerate}
-\item Grupo de tareas 1
 	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas h)
+		\item Grupo de tareas 1
+		      \begin{enumerate}
+			      \item Tarea 1 (tantas h)
+			      \item Tarea 2 (tantas hs)
+			      \item Tarea 3 (tantas h)
+		      \end{enumerate}
+		\item Grupo de tareas 2
+		      \begin{enumerate}
+			      \item Tarea 1 (tantas h)
+			      \item Tarea 2 (tantas h)
+			      \item Tarea 3 (tantas h)
+		      \end{enumerate}
+		\item Grupo de tareas 3
+		      \begin{enumerate}
+			      \item Tarea 1 (tantas h)
+			      \item Tarea 2 (tantas h)
+			      \item Tarea 3 (tantas h)
+			      \item Tarea 4 (tantas h)
+			      \item Tarea 5 (tantas h)
+		      \end{enumerate}
 	\end{enumerate}
-\item Grupo de tareas 2
-	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
-	\end{enumerate}
-\item Grupo de tareas 3
-	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
-	\item Tarea 4 (tantas h)
-	\item Tarea 5 (tantas h)
-	\end{enumerate}
-\end{enumerate}
 
-Cantidad total de horas: (tantas h)
+	Cantidad total de horas: (tantas h)
 
-Se recomienda que no haya ninguna tarea que lleve más de 40 h. 
+	Se recomienda que no haya ninguna tarea que lleve más de 40 h.
 
 \end{consigna}
 
@@ -346,19 +329,19 @@ Se recomienda que no haya ninguna tarea que lleve más de 40 h.
 \label{sec:AoN}
 
 \begin{consigna}{red}
-Armar el AoN a partir del WBS definido en la etapa anterior. 
+	Armar el AoN a partir del WBS definido en la etapa anterior.
 
-%La figura \ref{fig:AoN} fue elaborada con el paquete latex tikz y pueden consultar la siguiente referencia \textit{online}:
+	%La figura \ref{fig:AoN} fue elaborada con el paquete latex tikz y pueden consultar la siguiente referencia \textit{online}:
 
-%\url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_3)\%E2\%80\%94Creating_Flowcharts}
+	%\url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_3)\%E2\%80\%94Creating_Flowcharts}
 
 \end{consigna}
 
 \begin{figure}[htpb]
-\centering 
-\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
-\caption{Diagrama de \textit{Activity on Node}.}
-\label{fig:AoN}
+	\centering
+	\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
+	\caption{Diagrama de \textit{Activity on Node}.}
+	\label{fig:AoN}
 \end{figure}
 
 Indicar claramente en qué unidades están expresados los tiempos.
@@ -372,53 +355,53 @@ Es recomendable usar colores y un cuadro indicativo describiendo qué representa
 
 \begin{consigna}{red}
 
-Existen muchos programas y recursos \textit{online} para hacer diagramas de Gantt, entre los cuales destacamos:
+	Existen muchos programas y recursos \textit{online} para hacer diagramas de Gantt, entre los cuales destacamos:
 
-\begin{itemize}
-\item Planner
-\item GanttProject
-\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
-\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
-\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
-\end{itemize}
+	\begin{itemize}
+		\item Planner
+		\item GanttProject
+		\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
+		\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
+		\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
+	\end{itemize}
 
-Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
-Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
+	Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible.
+	Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
 
-Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
-Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
-Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
+	Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
+	Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
+	Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
 
-En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de Gantt realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
+	En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de Gantt realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
 
-\begin{figure}[htbp]
-\begin{center}
-\begin{ganttchart}{1}{12}
-  \gantttitle{2020}{12} \\
-  \gantttitlelist{1,...,12}{1} \\
-  \ganttgroup{Group 1}{1}{7} \\
-  \ganttbar{Task 1}{1}{2} \\
-  \ganttlinkedbar{Task 2}{3}{7} \ganttnewline
-  \ganttmilestone{Milestone o hito}{7} \ganttnewline
-  \ganttbar{Final Task}{8}{12}
-  \ganttlink{elem2}{elem3}
-  \ganttlink{elem3}{elem4}
-\end{ganttchart}
-\end{center}
-\caption{Diagrama de Gantt de ejemplo}
-\label{fig:gantt}
-\end{figure}
+	\begin{figure}[htbp]
+		\begin{center}
+			\begin{ganttchart}{1}{12}
+				\gantttitle{2020}{12} \\
+				\gantttitlelist{1,...,12}{1} \\
+				\ganttgroup{Group 1}{1}{7} \\
+				\ganttbar{Task 1}{1}{2} \\
+				\ganttlinkedbar{Task 2}{3}{7} \ganttnewline
+				\ganttmilestone{Milestone o hito}{7} \ganttnewline
+				\ganttbar{Final Task}{8}{12}
+				\ganttlink{elem2}{elem3}
+				\ganttlink{elem3}{elem4}
+			\end{ganttchart}
+		\end{center}
+		\caption{Diagrama de Gantt de ejemplo}
+		\label{fig:gantt}
+	\end{figure}
 
 
-\begin{landscape}
-\begin{figure}[htpb]
-\centering 
-\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
-\caption{Ejemplo de diagrama de Gantt rotado}
-\label{fig:diagGantt}
-\end{figure}
+	\begin{landscape}
+		\begin{figure}[htpb]
+			\centering
+			\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
+			\caption{Ejemplo de diagrama de Gantt rotado}
+			\label{fig:diagGantt}
+		\end{figure}
 
-\end{landscape}
+	\end{landscape}
 
 \end{consigna}
 
@@ -427,70 +410,70 @@ En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de Gantt realiza
 \label{sec:presupuesto}
 
 \begin{consigna}{red}
-Si el proyecto es complejo entonces separarlo en partes:
-\begin{itemize}
-	\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-	\item El desglose detallado del subtotal de cada una de las áreas.
-\end{itemize}
+	Si el proyecto es complejo entonces separarlo en partes:
+	\begin{itemize}
+		\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
+		\item El desglose detallado del subtotal de cada una de las áreas.
+	\end{itemize}
 
-IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
+	IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
 
 \end{consigna}
 
 \begin{table}[htpb]
-\centering
-\begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
-\hline
-\rowcolor[HTML]{C0C0C0} 
-\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
-\rowcolor[HTML]{C0C0C0} 
-Descripción &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
-\rowcolor[HTML]{C0C0C0} 
-\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
-\rowcolor[HTML]{C0C0C0} 
-Descripción &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
-\rowcolor[HTML]{C0C0C0}
-\multicolumn{3}{|c|}{TOTAL} &
-   \\ \hline
-\end{tabularx}%
+	\centering
+	\begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
+		\hline
+		\rowcolor[HTML]{C0C0C0}
+		\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS}   \\ \hline
+		\rowcolor[HTML]{C0C0C0}
+		Descripción                                                 &
+		\multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad}       &
+		\multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
+		\multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total}        \\ \hline
+		                                                            &
+		\multicolumn{1}{c|}{}                                       &
+		\multicolumn{1}{c|}{}                                       &
+		\multicolumn{1}{c|}{}                                           \\ \hline
+		                                                            &
+		\multicolumn{1}{c|}{}                                       &
+		\multicolumn{1}{c|}{}                                       &
+		\multicolumn{1}{c|}{}                                           \\ \hline
+		\multicolumn{1}{|l|}{}                                      &
+		                                                            &
+		                                                            &
+		\\ \hline
+		\multicolumn{1}{|l|}{}                                      &
+		                                                            &
+		                                                            &
+		\\ \hline
+		\multicolumn{3}{|c|}{SUBTOTAL}                              &
+		\multicolumn{1}{c|}{}                                           \\ \hline
+		\rowcolor[HTML]{C0C0C0}
+		\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
+		\rowcolor[HTML]{C0C0C0}
+		Descripción                                                 &
+		\multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad}       &
+		\multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
+		\multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total}        \\ \hline
+		\multicolumn{1}{|l|}{}                                      &
+		                                                            &
+		                                                            &
+		\\ \hline
+		\multicolumn{1}{|l|}{}                                      &
+		                                                            &
+		                                                            &
+		\\ \hline
+		\multicolumn{1}{|l|}{}                                      &
+		                                                            &
+		                                                            &
+		\\ \hline
+		\multicolumn{3}{|c|}{SUBTOTAL}                              &
+		\multicolumn{1}{c|}{}                                           \\ \hline
+		\rowcolor[HTML]{C0C0C0}
+		\multicolumn{3}{|c|}{TOTAL}                                 &
+		\\ \hline
+	\end{tabularx}%
 \end{table}
 
 
@@ -498,62 +481,62 @@ Descripción &
 \label{sec:riesgos}
 
 \begin{consigna}{red}
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
- 
-Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
-\begin{itemize}
-	\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
+	a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
+
+	Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
+	\begin{itemize}
+		\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
+		      Justificar el motivo por el cual se asigna determinado número de severidad (S).
+		\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
+		      Justificar el motivo por el cual se asigna determinado número de (O).
+	\end{itemize}
+
+	Riesgo 2:
+	\begin{itemize}
+		\item Severidad (S):
+		\item Ocurrencia (O):
+	\end{itemize}
+
+	Riesgo 3:
+	\begin{itemize}
+		\item Severidad (S):
+		\item Ocurrencia (O):
+	\end{itemize}
+
+
+	b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
+
+	\begin{table}[htpb]
+		\centering
+		\begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
+			\hline
+			\rowcolor[HTML]{C0C0C0}
+			Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
+			       &   &   &     &    &    &      \\ \hline
+			       &   &   &     &    &    &      \\ \hline
+			       &   &   &     &    &    &      \\ \hline
+			       &   &   &     &    &    &      \\ \hline
+			       &   &   &     &    &    &      \\ \hline
+		\end{tabularx}%
+	\end{table}
+
+	Criterio adoptado:
+	Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
+
+	Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
+
+	c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
+
+	Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+	Nueva asignación de S y O, con su respectiva justificación:
+	- Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).
 	Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de (O). 
-\end{itemize}   
+	- Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).
+	Justificar el motivo por el cual se asigna determinado número de (O).
 
-Riesgo 2:
-\begin{itemize}
-	\item Severidad (S): 
-	\item Ocurrencia (O):
-\end{itemize}
+	Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
 
-Riesgo 3:
-\begin{itemize}
-	\item Severidad (S): 
-	\item Ocurrencia (O):
-\end{itemize}
-
-
-b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
-
-\begin{table}[htpb]
-\centering
-\begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
-\hline
-\rowcolor[HTML]{C0C0C0} 
-Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-\end{tabularx}%
-\end{table}
-
-Criterio adoptado: 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
-
-Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
-
-c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
- 
-Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-  Nueva asignación de S y O, con su respectiva justificación:
-  - Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-  - Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de (O).
-
-Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
- 
-Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+	Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
 
 \end{consigna}
 
@@ -562,36 +545,36 @@ Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de
 \label{sec:calidad}
 
 \begin{consigna}{red}
-Elija al menos diez requerientos que a su criterio sean los más importantes/críticos/que aportan más valor y para cada uno de ellos indique las acciones de verificación y validación que permitan asegurar su cumplimiento.
+	Elija al menos diez requerientos que a su criterio sean los más importantes/críticos/que aportan más valor y para cada uno de ellos indique las acciones de verificación y validación que permitan asegurar su cumplimiento.
 
-\begin{itemize} 
-\item Req \#1: copiar acá el requerimiento.
+	\begin{itemize}
+		\item Req \#1: copiar acá el requerimiento.
 
-\begin{itemize}
-	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar 
-	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar  
-\end{itemize}
+		      \begin{itemize}
+			      \item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar
+			      \item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar
+		      \end{itemize}
 
-\end{itemize}
+	\end{itemize}
 
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
+	Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
 
 \end{consigna}
 
-\section{15. Procesos de cierre}    
+\section{15. Procesos de cierre}
 \label{sec:cierre}
 
 \begin{consigna}{red}
-Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
+	Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
 
-\begin{itemize}
-	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
-	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
-	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
-	  - Indicar esto y quién financiará los gastos correspondientes.
-\end{itemize}
+	\begin{itemize}
+		\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
+		      - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar.
+		\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:
+		      - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
+		\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
+		      - Indicar esto y quién financiará los gastos correspondientes.
+	\end{itemize}
 
 \end{consigna}
 
