@@ -7,7 +7,7 @@ codirector, % Uncomment to add a codirector to the title page
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Control motor brushless} 
+\titulo{Aplicación de un sistema de control interno para motores brushless trifásicos} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 \posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -20,7 +20,7 @@ codirector, % Uncomment to add a codirector to the title page
 \autor{Fernando Nicolas Calvet} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{XXXXXXXX YYYYYYYYY}
+\director{Agustín Antonio Rey}
 \pertenenciaDirector{pertenencia} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
 \codirector{Patricio BOS} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
@@ -40,7 +40,7 @@ codirector, % Uncomment to add a codirector to the title page
  
 \fechaINICIO{22 de Agosto de 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
 \fechaFINALPlan{10 de Octubre de 2023} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{XX de XXXX de XXXX}	%Fecha de defensa pública del trabajo final
+\fechaFINALTrabajo{10 de Octubre de 2024}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -91,7 +91,7 @@ codirector, % Uncomment to add a codirector to the title page
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en desarrollo de un sistema de control para motores trifásicos sin escobillas y sin sensor hall que pueda hacer girar el motor girar as una velocidad de 100.000 rpm, y tendrá un presupuesto preliminar estimado de 600 h de trabajo y USD4000, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en diseñar e implementar un sistema de control para motores trifásicos sin escobillas y sin sensor hall que permita alcanzar una velocidad de rotación de 100.000 rpm. Para ello, se utilizará un algoritmo de control vectorial basado en la estimación del ángulo eléctrico del rotor mediante un observador de estados, y tendrá un presupuesto preliminar estimado de 600 h de trabajo y USD4000, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -114,7 +114,7 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-El propósito de este proyecto es diseñar un sistema de control para motores trifásicos sin escobillas y sin sensor hall aplicando los algoritmos de control necesarios para su correcto funcionamiento y demostrar su performance montandolo dentro de un secador de pelo orientado al mercado profesional. Ademas se prevé que incorpore el control de potencia de la resistencia calefactora con su correspondiente realimentación y una interfaz de usuario sencilla.
+El propósito de este proyecto es diseñar un sistema de control para motores trifásicos sin escobillas y sin sensor hall aplicando los algoritmos de control necesarios para su correcto funcionamiento y demostrar su performance montándolo dentro de un secador de pelo orientado al mercado profesional. Además se prevé que incorpore el control de potencia de la resistencia calefactora con su correspondiente realimentación y una interfaz de usuario sencilla.
 
 En la actualidad los secadores de pelo se fabrican con básicamente tres tipos de motores:
 \begin{itemize}
@@ -123,7 +123,7 @@ En la actualidad los secadores de pelo se fabrican con básicamente tres tipos d
 	\item Motor sin escobillas
 \end{itemize}
 El más implementado de todos es el motor universal al ser, por el momento, el más equilibrado en relación precio/prestaciones. Esto se debe mayormente a su facilidad constructiva y a que no es necesario control externo para su funcionamiento.
-Sin embargo, la evolución en los procesos de manufactura, caída de precio en imanes permanentes y procesamiento hace cada dia mas viable la utilización de motores BLDC (brushless DC, motor CC sin escobillas).
+Sin embargo, la evolución en los procesos de manufactura, caída de precio en imanes permanentes y procesamiento hace cada día más viable la utilización de motores BLDC (brushless DC, motor CC sin escobillas).
 
 En la industria de los secadores de pelo se está produciendo una revolución silenciosa. Los modelos más avanzados, diseñados para uso profesional, cuentan con motores BLDC, que giran a una velocidad de hasta 100.000 rpm, seis veces más rápido que los motores convencionales. Este aumento de velocidad permite secar el cabello más rápido y con mayor precisión, sin dañarlo. A su vez dimensionalmente este cambio se traduce en pasar de 70 mm de diámetro al orden de los 30 mm (la mitad de tamaño).
 
@@ -133,20 +133,21 @@ Este proyecto busca satisfacer a 2 clientes, el externo y el interno.
 El cliente interno es el directorio que busca un mayor control sobre sus productos y una menor dependencia de los actuales fabricantes.
 El cliente externo finalmente será el profesional que utiliza el secador en salones de belleza, salones de peluquería y estética, spa, entre otros. Por lo que dicho proyecto deberá contemplar exigencias acordes a este mercado.
 
-En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa queb el mismo consta de:
+En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que el mismo consta de:
 \begin{itemize}
 	\item Un Filtro EMI para suprimir la interferencia electromagnética.
 	\item Un Rectificador para tener 310V para el control del Array MOSFET del motor BLDC.
 	\item Un Step-Down para la alimentación de la electrónica de baja potencia.
 	\item Un circuito de detección de cruce por 0 de la tensión de entrada, principalmente para un manejo más eficiente del controlador de elemento calefactor.
-	      Resistencias de Shunt junto con un circuito de Acondicionamiento de señal en cada una de las tres ramas del motor BLDC para el control por BEMF (fuerza contraelectromotriz (EMF) de realimentación) que permite saber en cada momento la posición del rotor respecto al estator.
+	      Resistencias de Shunt junto con un circuito de acondicionamiento de señal en cada una de las tres ramas del motor BLDC para el control por BEMF (fuerza contra electromotriz (EMF) de realimentación) que permite saber en cada momento la posición del rotor respecto al estator.
 \end{itemize}
+
 
 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=1\textwidth]{./Figuras/Diagrama_general_v1.drawio.png}
-	\caption{Diagrama en bloques del sistema}
+	\caption{Diagrama en bloques del sistema.}
 	\label{fig:diagBloques}
 \end{figure}
 
@@ -163,21 +164,21 @@ En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistem
 		\hline
 		\rowcolor[HTML]{C0C0C0}
 		Rol         & Nombre y Apellido     & Organización    & Puesto                   \\ \hline
-		Auspiciante & -                     & \empclientename &                          \\ \hline
+		%Auspiciante & -                     & \empclientename &                          \\ \hline
 		% Cliente       & \clientename      &\empclientename	&        	\\ \hline
-		Impulsor    & Ing. Jose Tantera     & \empclientename & Ing. Desarrollo (italia) \\ \hline
+		Impulsor    & Ing. Jose Tantera     & \empclientename & Ing. Desarrollo (Italia) \\ \hline
 		Responsable & \authorname           & FIUBA           & Alumno                   \\ \hline
 		% Colaboradores &                       &                 &                          \\ \hline
-		Orientador  & \supname              & \empclientename & Director Trabajo final   \\ \hline
-		Equipo      & Ing. Nicolas Berreiro & \empclientename & Diseño mecanico          \\ \hline
+		Orientador  & \supname              & FIUBA           & Director Trabajo final   \\ \hline
+		Equipo      & Ing. Nicolas Berreiro & \empclientename & Diseño mecánico          \\ \hline
 		% Usuario final & -                       &   -              &    -                      \\ \hline
 	\end{tabularx}
 \end{table}
 
 \begin{itemize}
-	\item Auspiciante: es riguroso y exigente con los costos, siempre se pide reducirlos.
-	\item Impulsor: Se unió al equipo de Italia recientemente, es posible que la comunicación se vea comprometida.
-	\item Orientador: Nicolas puede aportar mucho desde el punto de vista mecánico del proyecto.
+	\item Auspiciante: Es riguroso y exigente con los costos, por lo que siempre pide reducirlos.
+	\item Impulsor: Se unió al equipo de Italia recientemente, por lo que es posible que la comunicación se vea comprometida.
+	\item Orientador: Puede aportar desde su conocimiento en control de motores brushless.
 \end{itemize}
 
 
@@ -196,9 +197,9 @@ El resultado final de este proyecto es fabricar el prototipo de un inverter que 
 para la excitación y protección del motor BLDC. Incluyendo:
 
 \begin{itemize}
-	\item un PCB que incluye la etapa de potencia y al microcontrolador. Se debe realizar el diseño, fabricación y montaje.
-	\item un firmware con los algoritmos de control necesarios para el motor (FOC) que incluya también una simple interfaz de usuario.
-	\item una demostración con sus pertinentes mediciones de performance, comparando los resultados con la competencia.
+	\item Un PCB que incluye la etapa de potencia y al microcontrolador. Se debe realizar el diseño, fabricación y montaje.
+	\item Un firmware con los algoritmos de control necesarios para el motor (FOC) que incluya también una simple interfaz de usuario.
+	\item Una demostración con sus pertinentes mediciones de performance, comparando los resultados con la competencia.
 \end{itemize}
 
 Lo que no se incluye en este proyecto es el siguiente trabajo:
@@ -220,110 +221,160 @@ Para el desarrollo del presente proyecto se supone que:
 	\item El financiamiento del proyecto esta asegurado, y que se conseguirán todos los componentes y materiales necesarios.
 	\item El equipo de diseño industrial de la empresa proveerá las dimensiones necesarias para el diseño del PCB.
 	\item Se contara con un estimado de 20 horas semanales para el desarrollo del producto.
+	\item Se contará con recursos humanos calificados para llevar a cabo el proyecto.
+	\item Se obtendrán todos los permisos y licencias necesarios para llevar a cabo el proyecto.
 \end{itemize}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
 
-\begin{consigna}{red}
-	Los requerimientos deben numerarse y de ser posible estar agruparlos por afinidad, por ejemplo:
 
-	\begin{enumerate}
-		\item Requerimientos funcionales
-		      \begin{enumerate}
-			      \item El sistema debe...
-			      \item Tal componente debe...
-			      \item El usuario debe poder...
-		      \end{enumerate}
-		\item Requerimientos de documentación
-		      \begin{enumerate}
-			      \item Requerimiento 1
-			      \item Requerimiento 2 (prioridad menor)
-		      \end{enumerate}
-		\item Requerimiento de testing...
-		\item Requerimientos de la interfaz...
-		\item Requerimientos interoperabilidad...
-		\item etc...
-	\end{enumerate}
+\begin{enumerate}
+	\item Requerimientos funcionales
+	      \begin{enumerate}
+		      \item Debe controlar el motor a 100.000 rpm dentro y fuera de las carcasas del prototipo dimensional.
+		      \item El motor debe poder girar en 3 niveles de velocidad distintos. Velocidades a definir empíricamente.
+		      \item Debe poder controlar el motor en ambos sentidos de giro.
+		      \item Debe poder controlar 3 niveles de potencia distintos para el elemento calefactor.
+		      \item Los componentes utilizados para la validación deben ser tales que puedan ser ensamblados en un producto final.
+		      \item El diseño del prototipo se debe contemplar para futuras pruebas con control vectorial (FOC).
+		      \item Debe tener una protección contra sobre temperatura con histéresis en la etapa de potencia.
+		      \item Debe tener una protección contra sobre corriente en el motor, reseteable quitando la alimentación.
+		      \item El software desarrollado debe estar debidamente documentado (comentado).
+		      \item El software debe ser concebido de forma modular y por capas (HAL, drivers, aplicación) para que permita su reutilización.
+		      \item Debe controlar las tres fases del motor por medio de un IPM (Integrated Power Module).
+		      \item El sistema debe funcionar conectado a una red de 200/240VAC 50/60Hz.
+		      \item Debe incluir Fusible de entrada.
+		      \item Un rectificador para tener 310V para el control del Array MOSFET del motor BLDC.
+		      \item Un circuito step-sown para la alimentación de la electrónica de baja potencia.
+		      \item Un circuito de detección de cruce por 0 de la tensión de entrada para un manejo más eficiente del controlador de elemento calefactor.
+		      \item Se dispondrá de Resistencias de Shunt junto con un circuito de Acondicionamiento de señal en cada una de las tres ramas del motor BLDC para el control por BEMF (fuerza contraelectromotriz (EMF) de realimentación).
+	      \end{enumerate}
+	\item Requerimiento de firmware
+	      \begin{enumerate}
+		      \item Deberá implementar las transformadas directas e inversas de Park y Clarke.
+		      \item Deberá conocer la posición del rotor a través de BEMF.
+		      \item Deberá medir corrientes y tensiones de fase.
+		      \item Deberá implementar rampas de aceleración y desaceleración.
+		      \item Deberá apagar el inverter si hay falla del módulo o sobretemperatura.
+		      \item Se podrán monitorear variables de estado y parámetros a través de una UART.
+		      \item Deberá implementar el algoritmo de modulación SVPWM.
+		      \item Opcional: Detectar la restricción de la entrada de aire. Este método podría basarse en la medición de la temperatura del motor o en la medición de la presión del aire en la entrada del motor.
+		            Una vez que el sistema detecta la restricción de la entrada de aire, debe tomar las siguientes medidas:
+		            \begin{enumerate}
+			            \item Frenar el motor para evitar que se dañe.
+			            \item Generar una alarma para alertar al usuario de la condición.
+		            \end{enumerate}
+	      \end{enumerate}
+	\item Requerimientos de la interfaz
+	      \begin{enumerate}
+		      \item Tendrá 3 led que indiquen velocidad y otros 3 que indiquen temperatura.
+		      \item Tendrá un switch tipo slider a modo de ON/OFF.
+	      \end{enumerate}
+	\item Requerimientos interoperabilidad
+	      \begin{enumerate}
+		      \item El sistema deberá proporcionar una API sencilla por UART para el intercambio de datos de uso del producto.
+	      \end{enumerate}
 
-	Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
-
-	Indicar claramente cuál es la prioridad entre los distintos requerimientos y si hay requerimientos opcionales.
-
-	No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!
-
-	Y al escribirlos seguir las siguientes reglas:
-	\begin{itemize}
-		\item Ser breve y conciso (nadie lee cosas largas).
-		\item Ser específico: no dejar lugar a confusiones.
-		\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-	\end{itemize}
-
-\end{consigna}
+\end{enumerate}
 
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-\begin{consigna}{red}
-	Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
+En esta sección se enuncian las historias de usuario, cada una de ellas llevará un puntaje según
+3 aspectos:
+\begin{enumerate}
+	\item Dificultad: Cantidad de trabajo a realizar.
+	\item Complejidad: Complejidad de trabajo a realizar.
+	\item Riesgo: Incertidumbre del trabajo a realizar.
+\end{enumerate}
+Se utilizará una escala siguiendo la serie de Fibonacci, donde un número mayor implica mayor
+costo. Si la suma de los 3 componentes no da un número de la serie, se eligirá el próximo más
+cercano.
 
-	El formato propuesto es: "como [rol] quiero [tal cosa] para [tal otra cosa]."
-
-	Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia
-\end{consigna}
+\begin{enumerate}
+	\item ''Como gerente de calidad quiero que sea capaz de informar horas y funciones de uso''\newline
+	      D = 2; C = 2; R = 1  Total = 5
+	\item ''Como servicio técnico quiero que los pines de reprogramación sean más accesibles''\newline
+	      D = 4; C = 1; R = 2  Total = 8
+	\item ''Como servicio técnico quiero informe el tipo de error a través de los LEDs''\newline
+	      D = 3; C = 2; R = 1  Total = 8
+	\item ''Como gerente de marketing quiero que ofrezca sensado de bloqueo de entrada de aire''\newline
+	      D = 4; C = 4; R = 3  Total = 13
+	\item ''Como diseñador industrial quiero que el PCB se adapte dimensionalmente a la estética del producto''\newline
+	      D = 2; C = 4; R = 3  Total = 13
+	\item ''Como usuario quiero que el secador tenga la función de auto-clean''\newline
+	      D = 3; C = 1; R = 1  Total = 5
+	\item ''Como usuario quiero que me avise si el filtro esta sucio''\newline
+	      D = 3; C = 2; R = 1  Total = 8
+\end{enumerate}
 
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
 
-\begin{consigna}{red}
+Los entregables del proyecto son:
 
-	Los entregables del proyecto son (ejemplo):
+\begin{itemize}
+	\item Manual de uso
+	\item Diagrama de circuitos esquemáticos
+	\item Código fuente del firmware
+	\item Informe final
+	\item Video funcional del prototipo
+\end{itemize}
 
-	\begin{itemize}
-		\item Manual de uso
-		\item Diagrama de circuitos esquemáticos
-		\item Código fuente del firmware
-		\item Diagrama de instalación
-		\item Informe final
-		\item etc...
-	\end{itemize}
-
-\end{consigna}
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-\begin{consigna}{red}
-	El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
+\begin{enumerate}
 
-	\begin{enumerate}
-		\item Grupo de tareas 1
-		      \begin{enumerate}
-			      \item Tarea 1 (tantas h)
-			      \item Tarea 2 (tantas hs)
-			      \item Tarea 3 (tantas h)
-		      \end{enumerate}
-		\item Grupo de tareas 2
-		      \begin{enumerate}
-			      \item Tarea 1 (tantas h)
-			      \item Tarea 2 (tantas h)
-			      \item Tarea 3 (tantas h)
-		      \end{enumerate}
-		\item Grupo de tareas 3
-		      \begin{enumerate}
-			      \item Tarea 1 (tantas h)
-			      \item Tarea 2 (tantas h)
-			      \item Tarea 3 (tantas h)
-			      \item Tarea 4 (tantas h)
-			      \item Tarea 5 (tantas h)
-		      \end{enumerate}
-	\end{enumerate}
+	\item \textbf{Investigación y documentación} (100 h)
+	      \begin{enumerate}
+		      \item Estudio de técnicas de control de un motor BLDC trifásico (40 h)
+		      \item Estudio de elementos de hardware necesarios (20 h)
+		      \item Estudio de funciones y algoritmos (40 h)
+	      \end{enumerate}
 
-	Cantidad total de horas: (tantas h)
+	\item \textbf{Hardware} (190 h)
+	      \begin{enumerate}
+		      \item Análisis de opciones de kits de desarrollo y marcas orientados a la temática (30 h)
+		      \item Análisis de costos de hardware para asegurar su factibilidad comercial (30 h)
+		      \item Diseño del circuito (20 h)
+		      \item Diseño de circuito impreso (PCB) (40 h)
+		      \item Implementación de circuito impreso (30 h)
+		      \item Fabricación PCB (20 h)
+		      \item Armado PCB (10 h)
+		      \item Verificación PCB (10 h)
+	      \end{enumerate}
 
-	Se recomienda que no haya ninguna tarea que lleve más de 40 h.
+	\item \textbf{Desarrollo de firmware} (190 h)
+	      \begin{enumerate}
+		      \item Manejo básico del hardware (40 h)
+		      \item Etapas de Arranque del motor (40 h)
+		      \item Testeo del módulo de potencia (30 h)
+		      \item Medición de Corrientes y tensiones - Calibración (30 h)
+		      \item Medición de temperatura (5 h)
+		      \item Detección de falla del módulo (5 h)
+		      \item Implementación de los algoritmos de control PMSM (100 h)
+		            \begin{enumerate}
+			            \item Park Transform (20 h)
+			            \item Clarke Transform (20 h)
+			            \item PID (20 h)
+			            \item Generador de rampas de velocidad (10 h)
+		            \end{enumerate}
+	      \end{enumerate}
 
-\end{consigna}
+	\item \textbf{Informe Final y Presentación} (80 h)
+	      \begin{enumerate}
+		      \item Informe Final (30 h)
+		      \item Redacción de documentos técnicos principales (20 hs)
+		      \item Preparación de la presentación (30 h)
+	      \end{enumerate}
+
+\end{enumerate}
+
+
+El total es de 620 horas.
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
